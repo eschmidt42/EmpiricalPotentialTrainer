@@ -4,4 +4,4 @@ python:
 install:
   - pip install - requirements.txt
 #script:
-#  - python test_master.py
+  - python test_master.py
