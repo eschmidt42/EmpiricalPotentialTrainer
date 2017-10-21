@@ -4,3 +4,15 @@
 [![Build Status](https://travis-ci.org/Hamstard/PottyTrainer.svg?branch=master)](https://travis-ci.org/Hamstard/PottyTrainer)
 
 How to train your empirical potential.
+
+## Documentation
+
+-> Readthedocs page.
+
+## Tutorials
+
+-> notebooks
+
+## How to cite
+
+-> doi
