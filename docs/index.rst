@@ -12,6 +12,8 @@ Welcome to PottyTrainer's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+PottyTrainer (semi-empirical potential trainer) contains various useful scripts to parse DFT files and develop models to approximate the ground state electron densities as well as energies and forces. Enjoy sciencing away!
+
 GitHub
 ======
 
