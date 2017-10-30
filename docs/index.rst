@@ -10,7 +10,10 @@ Welcome to PottyTrainer's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+GitHub
+======
 
+PottyTrainer can be found on GitHub at: https://github.com/Hamstard/PottyTrainer
 
 Indices and tables
 ==================
