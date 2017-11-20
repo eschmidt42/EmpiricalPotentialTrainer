@@ -1,0 +1,768 @@
+ +-------------------------------------------------+
+ |                                                 |
+ |      CCC   AA    SSS  TTTTT  EEEEE  PPPP        |
+ |     C     A  A  S       T    E      P   P       |
+ |     C     AAAA   SS     T    EEE    PPPP        |
+ |     C     A  A     S    T    E      P           |
+ |      CCC  A  A  SSS     T    EEEEE  P           |
+ |                                                 |
+ +-------------------------------------------------+
+ |                                                 |
+ | Welcome to Academic Release CASTEP version 16.1 |          
+ | Ab Initio Total Energy Program                  |
+ |                                                 |
+ | Authors:                                        |
+ | M. Segall, M. Probert, C. Pickard, P. Hasnip,   |
+ | S. Clark, K. Refson, J. R. Yates, M. Payne      |
+ |                                                 |
+ | Contributors:                                   |
+ | P. Lindan, P. Haynes, J. White, V. Milman,      |
+ | N. Govind, M. Gibson, P. Tulip, V. Cocula,      |
+ | B. Montanari, D. Quigley, M. Glover,            |
+ | L. Bernasconi, A. Perlov, M. Plummer,           |
+ | E. McNellis, J. Meyer, J. Gale, D. Jochym       |
+ | J. Aarons, B. Walker, R. Gillen, D. Jones       |
+ | T. Green, I. J. Bush, C. J. Armstrong,          |
+ | E. J. Higgins, E. L. Brown, M. S. McFly         |
+ |                                                 |
+ | Copyright (c) 2000 - 2015                       |
+ |                                                 |
+ |     Distributed under the terms of an           |
+ |     Agreement between the United Kingdom        |
+ |     Car-Parrinello (UKCP) Consortium,           |
+ |     Daresbury Laboratory and Accelrys, Inc.     |
+ |                                                 |
+ | Please cite                                     |
+ |                                                 |
+ |     "First principles methods using CASTEP"     |
+ |                                                 |
+ |         Zeitschrift fuer Kristallographie       |
+ |           220(5-6) pp. 567-570 (2005)           |
+ |                                                 |
+ | S. J. Clark, M. D. Segall, C. J. Pickard,       |
+ | P. J. Hasnip, M. J. Probert, K. Refson,         |
+ | M. C. Payne                                     |
+ |                                                 |
+ |       in all publications arising from          |
+ |              your use of CASTEP                 |
+ |                                                 |
+ +-------------------------------------------------+
+ 
+ 
+ Compiled for linux_x86_64_ifort15 on Mon, 22 Aug 2016 09:38:05 +0100
+ from code version 656ba4f04705+  Thu, 19 Nov 2015 16:58:50 +0000
+ Compiler: Intel Fortran 15.0.5.223; Optimisation: fast
+ MATHLIBS: Intel MKL(11.3.1) (LAPACK version 3.5.0)
+ FFT Lib : default
+ Fundamental constants values: CODATA 2010
+ 
+ Run started: Sun, 22 Jan 2017 02:21:53 +0000
+ 
+ Atomic calculation performed for Al: 1s2 2s2 2p6 3s2 3p1
+ 
+ Converged in 54 iterations to an ae energy of -6603.782 eV
+ 
+   ============================================================                
+   | Pseudopotential Report - Date of generation 22-01-2017   |                
+   ------------------------------------------------------------                
+   | Element: Al Ionic charge:  3.00 Level of theory: PBE     |                
+   | Atomic Solver: Koelling-Harmon                           |                
+   |                                                          |                
+   |               Reference Electronic Structure             |                
+   |         Orbital         Occupation         Energy        |                
+   |            3s              2.000           -0.285        |                
+   |            3p              1.000           -0.100        |                
+   |                                                          |                
+   |                 Pseudopotential Definition               |                
+   |        Beta     l      e      Rc     scheme   norm       |                
+   |          1      0   -0.285   2.000     qc      0         |                
+   |          2      0    0.250   2.000     qc      0         |                
+   |          3      1   -0.100   2.000     qc      0         |                
+   |          4      1    0.250   2.000     qc      0         |                
+   |          5      2    0.000   2.000     qc      0         |                
+   |          6      2    0.250   2.000     qc      0         |                
+   |         loc     3    0.000   2.000     pn      0         |                
+   |                                                          |                
+   | Augmentation charge Rinner = 1.398                       |                
+   | Partial core correction Rc = 1.398                       |                
+   ------------------------------------------------------------                
+   | "3|2.0|4|4|5|30:31:32"                                   |                
+   ------------------------------------------------------------                
+   |      Author: Chris J. Pickard, Cambridge University      |                
+   ============================================================                
+ 
+ Pseudo atomic calculation performed for Al 3s2 3p1
+ 
+ Converged in 14 iterations to a total energy of -107.1300 eV
+ 
+ Calculation not parallelised.
+
+ ************************************ Title ************************************
+ 
+
+ ***************************** General Parameters ******************************
+  
+ output verbosity                               : normal  (1)
+ write checkpoint data to                       : Al_100K-321.check
+ type of calculation                            : single point energy
+ stress calculation                             : on
+ density difference calculation                 : off
+ electron localisation func (ELF) calculation   : off
+ Hirshfeld analysis                             : off
+ unlimited duration calculation
+ timing information                             : on
+ memory usage estimate                          : on
+ write final potential to formatted file        : off
+ write final density to formatted file          : on
+ write BibTeX reference list                    : on
+ write OTFG pseudopotential files               : on
+ checkpoint writing                             : both castep_bin and check files
+  
+ output         length unit                     : A
+ output           mass unit                     : amu
+ output           time unit                     : ps
+ output         charge unit                     : e
+ output           spin unit                     : hbar/2
+ output         energy unit                     : eV
+ output          force unit                     : eV/A
+ output       velocity unit                     : A/ps
+ output       pressure unit                     : GPa
+ output     inv_length unit                     : 1/A
+ output      frequency unit                     : cm-1
+ output force constant unit                     : eV/A**2
+ output         volume unit                     : A**3
+ output   IR intensity unit                     : (D/A)**2/amu
+ output         dipole unit                     : D
+ output         efield unit                     : eV/A/e
+ output        entropy unit                     : J/mol/K
+  
+ wavefunctions paging                           : none
+ random number generator seed                   : randomised (22153125)
+ data distribution                              : optimal for this architecture
+ optimization strategy                          : maximize speed(+++)
+
+ *********************** Exchange-Correlation Parameters ***********************
+  
+ using functional                               : Perdew Burke Ernzerhof
+ relativistic treatment                         : Koelling-Harmon
+ DFT+D: Semi-empirical dispersion correction    : off
+
+ ************************* Pseudopotential Parameters **************************
+  
+ pseudopotential representation                 : reciprocal space
+ <beta|phi> representation                      : reciprocal space
+ spin-orbit coupling                            : off
+
+ **************************** Basis Set Parameters *****************************
+  
+ plane wave basis set cut-off                   :   400.0000   eV
+ size of standard grid                          :     1.7500
+ size of   fine   gmax                          :    17.9311   1/A
+ finite basis set correction                    : automatic
+ number of sample energies                      :          3
+           sample  spacing                      :     5.0000   eV
+
+ **************************** Electronic Parameters ****************************
+  
+ number of  electrons                           :  96.00    
+ net charge of system                           :  0.000    
+ treating system as non-spin-polarized
+ number of bands                                :         58
+
+ ********************* Electronic Minimization Parameters **********************
+  
+ Method: Treating system as metallic with density mixing treatment of electrons,
+         and number of  SD  steps               :          1
+         and number of  CG  steps               :          4
+  
+ total energy / atom convergence tol.           : 0.1000E-04   eV
+ eigen-energy convergence tolerance             : 0.1000E-05   eV
+ max force / atom convergence tol.              : ignored
+ convergence tolerance window                   :          3   cycles
+ max. number of SCF cycles                      :         30
+ number of fixed-spin iterations                :         10
+ smearing scheme                                : Gaussian
+ smearing width                                 : 0.2000       eV
+ Fermi energy convergence tolerance             : 0.2721E-13   eV
+ periodic dipole correction                     : NONE
+
+ ************************** Density Mixing Parameters **************************
+  
+ density-mixing scheme                          : Broyden
+ max. length of mixing history                  :         20
+ charge density mixing amplitude                : 0.8000    
+ cut-off energy for mixing                      :  400.0       eV
+
+ *********************** Population Analysis Parameters ************************
+  
+ Population analysis with cutoff                :  3.000       A
+
+ *******************************************************************************
+  
+ 
+                           -------------------------------
+                                      Unit Cell
+                           -------------------------------
+        Real Lattice(A)                      Reciprocal Lattice(1/A)
+   8.1034805   0.0000000   0.0000000        0.7753687   0.0000000   0.0000000
+   0.0000000   8.1034805   0.0000000        0.0000000   0.7753687   0.0000000
+   0.0000000   0.0000000   8.1034805        0.0000000   0.0000000   0.7753687
+ 
+                       Lattice parameters(A)       Cell Angles
+                    a =    8.103481          alpha =   90.000000
+                    b =    8.103481          beta  =   90.000000
+                    c =    8.103481          gamma =   90.000000
+ 
+                       Current cell volume =  532.126371       A**3
+ 
+                           -------------------------------
+                                     Cell Contents
+                           -------------------------------
+                         Total number of ions in cell =   32
+                      Total number of species in cell =    1
+                        Max number of any one species =   32
+ 
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            x  Element    Atom        Fractional coordinates of atoms  x
+            x            Number           u          v          w      x
+            x----------------------------------------------------------x
+            x  Al           1         0.003410  -0.005449   0.005703   x 
+            x  Al           2         0.000217   0.244344   0.254081   x 
+            x  Al           3         0.246650   0.005594   0.254531   x 
+            x  Al           4         0.247098   0.248456   0.004764   x 
+            x  Al           5         0.000819   0.002444   0.499465   x 
+            x  Al           6         0.000886   0.254663   0.749369   x 
+            x  Al           7         0.246239  -0.002882   0.756733   x 
+            x  Al           8         0.254416   0.257611   0.499946   x 
+            x  Al           9        -0.003543   0.501675  -0.005754   x 
+            x  Al          10        -0.012616   0.754795   0.250726   x 
+            x  Al          11         0.247825   0.508199   0.249226   x 
+            x  Al          12         0.255076   0.746493   0.006833   x 
+            x  Al          13        -0.000054   0.494281   0.488326   x 
+            x  Al          14         0.003771   0.748844   0.747923   x 
+            x  Al          15         0.248913   0.494450   0.754674   x 
+            x  Al          16         0.241251   0.755782   0.504571   x 
+            x  Al          17         0.497182  -0.002830  -0.004743   x 
+            x  Al          18         0.506638   0.247745   0.246345   x 
+            x  Al          19         0.753000  -0.001924   0.241232   x 
+            x  Al          20         0.759887   0.245699   0.002942   x 
+            x  Al          21         0.503056   0.003356   0.503191   x 
+            x  Al          22         0.498987   0.248521   0.760638   x 
+            x  Al          23         0.756894  -0.005539   0.750564   x 
+            x  Al          24         0.745953   0.242333   0.496304   x 
+            x  Al          25         0.500980   0.506656  -0.002213   x 
+            x  Al          26         0.498781   0.758231   0.256558   x 
+            x  Al          27         0.747199   0.498997   0.253791   x 
+            x  Al          28         0.743168   0.744217  -0.007850   x 
+            x  Al          29         0.496747   0.502553   0.500350   x 
+            x  Al          30         0.502568   0.748086   0.742019   x 
+            x  Al          31         0.749856   0.499085   0.741398   x 
+            x  Al          32         0.758746   0.755517   0.498356   x 
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ 
+ 
+                         No user defined ionic velocities
+ 
+                           -------------------------------
+                                   Details of Species
+                           -------------------------------
+ 
+                               Mass of species in AMU
+                                    Al   26.9815400
+ 
+                          Electric Quadrupole Moment (Barn)
+                                    Al    0.1466000 Isotope 27
+ 
+                          Files used for pseudopotentials:
+                                    Al 3|2.0|4|4|5|30:31:32
+ 
+                           -------------------------------
+                              k-Points For BZ Sampling
+                           -------------------------------
+                       MP grid size for SCF calculation is 16 16 16
+                            with an offset of   0.000  0.000  0.000
+                       Number of kpoints used =          2048
+ 
+                           -------------------------------
+                               Symmetry and Constraints
+                           -------------------------------
+ 
+                      Maximum deviation from symmetry =  0.00000         ANG
+ 
+         There are no symmetry operations specified or generated for this cell
+                      Number of ionic constraints     =           3
+                      Point group of crystal =     1: C1, 1, 1
+                      Space group of crystal =     1: P1, P 1
+ 
+ 
+                         Centre of mass is constrained
+             Set iprint > 1 for details of linear ionic constraints
+ 
+                         Number of cell constraints= 0
+                         Cell constraints are:  1 2 3 4 5 6
+ 
+                         External pressure/stress (GPa)
+                          0.00000   0.00000   0.00000
+                                    0.00000   0.00000
+                                              0.00000
+  
++---------------- MEMORY AND SCRATCH DISK ESTIMATES PER PROCESS --------------+
+|                                                     Memory          Disk    |
+| Baseline code, static data and system overhead       59.0 MB         0.0 MB |
+| BLAS internal memory storage                          0.0 MB         0.0 MB |
+| Model and support data                            21763.8 MB         0.0 MB |
+| Electronic energy minimisation requirements       37644.8 MB         0.0 MB |
+| Force calculation requirements                       14.3 MB         0.0 MB |
+| Stress calculation requirements                      16.9 MB         0.0 MB |
+|                                               ----------------------------- |
+| Approx. total storage required per process        59467.6 MB         0.0 MB |
+|                                                                             |
+| Requirements will fluctuate during execution and may exceed these estimates |
++-----------------------------------------------------------------------------+
+Calculating finite basis set correction with  3 cut-off energies.
+Calculating total energy with cut-off of  390.000eV.
+------------------------------------------------------------------------ <-- SCF
+SCF loop      Energy           Fermi           Energy gain       Timer   <-- SCF
+                               energy          per atom          (sec)   <-- SCF
+------------------------------------------------------------------------ <-- SCF
+Initial   6.68193363E+002  0.00000000E+000                      1068.05  <-- SCF
+      1  -3.13611960E+003  9.11511181E+000   1.18884780E+002    9362.17  <-- SCF
+      2  -3.52623427E+003  5.61350630E+000   1.21910834E+001   16786.64  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      3  -3.54783645E+003  5.64532224E+000   6.75068207E-001   23866.95  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      4  -3.54793887E+003  5.62558475E+000   3.20066185E-003   32639.87  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      5  -3.54787623E+003  5.61364372E+000  -1.95761739E-003   42144.83  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      6  -3.54787645E+003  5.61239975E+000   6.94169822E-006   51405.05  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      7  -3.54787648E+003  5.61236783E+000   9.86912114E-007   58602.41  <-- SCF
+------------------------------------------------------------------------ <-- SCF
+ 
+Final energy, E             =  -3547.614072542     eV
+Final free energy (E-TS)    =  -3547.876481378     eV
+(energies not corrected for finite basis set)
+ 
+NB est. 0K energy (E-0.5TS)      =  -3547.745276960     eV
+ 
+Calculating total energy with cut-off of  395.000eV.
+------------------------------------------------------------------------ <-- SCF
+SCF loop      Energy           Fermi           Energy gain       Timer   <-- SCF
+                               energy          per atom          (sec)   <-- SCF
+------------------------------------------------------------------------ <-- SCF
+Initial  -3.54761407E+003  0.00000000E+000                     59448.90  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      1  -3.54787688E+003  5.61227023E+000   8.21301342E-003   66902.69  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      2  -3.54787689E+003  5.61227013E+000   2.02337752E-007   71946.14  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      3  -3.54787685E+003  5.61225597E+000  -1.32923105E-006   77012.71  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      4  -3.54787685E+003  5.61225627E+000   1.40572640E-007   81872.12  <-- SCF
+------------------------------------------------------------------------ <-- SCF
+ 
+Final energy, E             =  -3547.614440887     eV
+Final free energy (E-TS)    =  -3547.876850914     eV
+(energies not corrected for finite basis set)
+ 
+NB est. 0K energy (E-0.5TS)      =  -3547.745645901     eV
+ 
+Calculating total energy with cut-off of  400.000eV.
+------------------------------------------------------------------------ <-- SCF
+SCF loop      Energy           Fermi           Energy gain       Timer   <-- SCF
+                               energy          per atom          (sec)   <-- SCF
+------------------------------------------------------------------------ <-- SCF
+Initial  -3.54761444E+003  0.00000000E+000                     82721.02  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      1  -3.54787716E+003  5.61225862E+000   8.21006398E-003   89635.23  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      2  -3.54787716E+003  5.61225860E+000   5.79072051E-008   94354.95  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      3  -3.54787716E+003  5.61224835E+000  -5.53621102E-008   99065.61  <-- SCF
+ Warning: There are no empty bands for at least one kpoint and spin; this may
+          slow the convergence and/or lead to an inaccurate groundstate.
+          If this warning persists, you should consider increasing nextra_bands
+          and/or reducing smearing_width in the param file.
+          Recommend using nextra_bands of 16 to 30.                             
+  
+      4  -3.54787716E+003  5.61224732E+000   2.22646380E-008  103732.30  <-- SCF
+------------------------------------------------------------------------ <-- SCF
+ 
+Final energy, E             =  -3547.614753351     eV
+Final free energy (E-TS)    =  -3547.877162901     eV
+(energies not corrected for finite basis set)
+ 
+NB est. 0K energy (E-0.5TS)      =  -3547.745958126     eV
+ 
+ For future reference: finite basis dEtot/dlog(Ecut) =      -0.026962eV
+ Total energy corrected for finite basis set =   -3547.877163 eV
+ 
+ *********************** Forces ***********************
+ *                                                    *
+ *            Cartesian components (eV/A)             *
+ * -------------------------------------------------- *
+ *                   x            y            z      *
+ *                                                    *
+ * Al        1     -0.02529      0.02665     -0.26044 *
+ * Al        2      0.01945      0.26101     -0.14267 *
+ * Al        3      0.21864     -0.17315      0.00061 *
+ * Al        4      0.04839      0.10261      0.02323 *
+ * Al        5      0.02256      0.09805      0.12924 *
+ * Al        6     -0.04265     -0.22734     -0.07639 *
+ * Al        7      0.10130      0.14181     -0.17916 *
+ * Al        8      0.01643     -0.22252      0.06329 *
+ * Al        9      0.03331      0.00060      0.25768 *
+ * Al       10      0.41634     -0.26155     -0.18567 *
+ * Al       11      0.05094     -0.18886     -0.00489 *
+ * Al       12     -0.19060      0.15357     -0.15910 *
+ * Al       13     -0.02248      0.17659      0.33428 *
+ * Al       14     -0.08450     -0.10480      0.14473 *
+ * Al       15      0.05191      0.22649     -0.12060 *
+ * Al       16      0.22828     -0.17191     -0.15768 *
+ * Al       17      0.11432      0.02504      0.15956 *
+ * Al       18     -0.24683      0.11273     -0.02649 *
+ * Al       19     -0.25469      0.01991      0.15656 *
+ * Al       20     -0.21978      0.14719     -0.18938 *
+ * Al       21     -0.15847     -0.04708      0.00476 *
+ * Al       22      0.13343      0.02185     -0.21423 *
+ * Al       23     -0.11378      0.20992      0.05829 *
+ * Al       24      0.08008      0.19570      0.19801 *
+ * Al       25      0.01413     -0.31322      0.13568 *
+ * Al       26      0.03543     -0.13931     -0.04816 *
+ * Al       27     -0.02424      0.03782     -0.18949 *
+ * Al       28      0.18175      0.11192      0.18169 *
+ * Al       29      0.05773     -0.02598     -0.06705 *
+ * Al       30     -0.16270      0.08099      0.07570 *
+ * Al       31      0.01262     -0.10148      0.03383 *
+ * Al       32     -0.29104     -0.17328      0.06424 *
+ *                                                    *
+ ******************************************************
+ 
+ ***************** Stress Tensor *****************
+ *                                               *
+ *          Cartesian components (GPa)           *
+ * --------------------------------------------- *
+ *             x             y             z     *
+ *                                               *
+ *  x      0.414955     -0.013710      0.051046  *
+ *  y     -0.013710      0.395674      0.055629  *
+ *  z      0.051046      0.055629      0.450525  *
+ *                                               *
+ *  Pressure:   -0.4204                          *
+ *                                               *
+ *************************************************
+ 
+ Pseudo atomic calculation performed for Al 3s2 3p1
+ 
+ Converged in 14 iterations to a total energy of -107.1300 eV
+ 
+Charge spilling parameter for spin component 1 = 1.84%
+ 
+     Atomic Populations (Mulliken)
+     -----------------------------
+Species   Ion     s      p      d      f     Total  Charge (e)
+==============================================================
+  Al       1     1.12   1.89   0.00   0.00   3.00    -0.00
+  Al       2     1.11   1.89   0.00   0.00   3.00    -0.00
+  Al       3     1.12   1.88   0.00   0.00   3.00    -0.00
+  Al       4     1.12   1.87   0.00   0.00   3.00     0.00
+  Al       5     1.11   1.89   0.00   0.00   3.00    -0.00
+  Al       6     1.13   1.87   0.00   0.00   3.00    -0.00
+  Al       7     1.13   1.87   0.00   0.00   3.00     0.00
+  Al       8     1.13   1.87   0.00   0.00   3.00     0.00
+  Al       9     1.13   1.87   0.00   0.00   3.00     0.00
+  Al      10     1.12   1.89   0.00   0.00   3.00    -0.00
+  Al      11     1.13   1.87   0.00   0.00   3.00     0.00
+  Al      12     1.12   1.88   0.00   0.00   3.00    -0.00
+  Al      13     1.12   1.88   0.00   0.00   3.00    -0.00
+  Al      14     1.12   1.88   0.00   0.00   3.00    -0.00
+  Al      15     1.12   1.87   0.00   0.00   3.00     0.00
+  Al      16     1.13   1.87   0.00   0.00   3.00     0.00
+  Al      17     1.12   1.88   0.00   0.00   3.00    -0.00
+  Al      18     1.13   1.87   0.00   0.00   3.00     0.00
+  Al      19     1.11   1.89   0.00   0.00   3.00    -0.00
+  Al      20     1.13   1.87   0.00   0.00   3.00    -0.00
+  Al      21     1.13   1.87   0.00   0.00   3.00    -0.00
+  Al      22     1.13   1.86   0.00   0.00   3.00     0.00
+  Al      23     1.12   1.87   0.00   0.00   3.00     0.00
+  Al      24     1.12   1.88   0.00   0.00   3.00     0.00
+  Al      25     1.13   1.87   0.00   0.00   3.00     0.00
+  Al      26     1.13   1.87   0.00   0.00   3.00     0.00
+  Al      27     1.13   1.87   0.00   0.00   3.00     0.00
+  Al      28     1.12   1.88   0.00   0.00   3.00    -0.00
+  Al      29     1.13   1.87   0.00   0.00   3.00     0.00
+  Al      30     1.12   1.88   0.00   0.00   3.00     0.00
+  Al      31     1.13   1.87   0.00   0.00   3.00     0.00
+  Al      32     1.12   1.89   0.00   0.00   3.00    -0.00
+==============================================================
+ 
+            Bond              Population      Length (A)
+============================================================
+        Al 10 -- Al 32             0.26        2.73120
+        Al 10 -- Al 19             0.25        2.73860
+        Al 25 -- Al 28             0.29        2.74949
+        Al 11 -- Al 12             0.28        2.75507
+        Al 14 -- Al 16             0.27        2.75596
+        Al 21 -- Al 24             0.28        2.76181
+        Al 2  -- Al 13             0.25        2.77583
+        Al 2  -- Al 3              0.22        2.78046
+        Al 1  -- Al 10             0.25        2.78100
+        Al 12 -- Al 25             0.24        2.78449
+        Al 19 -- Al 20             0.23        2.78537
+        Al 1  -- Al 19             0.21        2.78590
+        Al 17 -- Al 22             0.26        2.78631
+        Al 5  -- Al 16             0.23        2.79160
+        Al 8  -- Al 29             0.26        2.79213
+        Al 29 -- Al 30             0.26        2.79217
+        Al 2  -- Al 5              0.22        2.79222
+        Al 11 -- Al 13             0.24        2.79313
+        Al 13 -- Al 27             0.23        2.79435
+        Al 6  -- Al 15             0.23        2.79591
+        Al 5  -- Al 32             0.20        2.80214
+        Al 18 -- Al 24             0.22        2.80457
+        Al 7  -- Al 17             0.22        2.80556
+        Al 3  -- Al 5              0.21        2.81222
+        Al 28 -- Al 30             0.20        2.81260
+        Al 7  -- Al 14             0.21        2.81307
+        Al 23 -- Al 32             0.21        2.81538
+        Al 2  -- Al 20             0.22        2.81683
+        Al 8  -- Al 13             0.21        2.81766
+        Al 21 -- Al 26             0.24        2.81801
+        Al 1  -- Al 7              0.23        2.81831
+        Al 6  -- Al 9              0.20        2.81879
+        Al 8  -- Al 15             0.22        2.81891
+        Al 18 -- Al 27             0.23        2.81942
+        Al 23 -- Al 28             0.22        2.82083
+        Al 9  -- Al 15             0.21        2.82090
+        Al 1  -- Al 3              0.20        2.82117
+        Al 14 -- Al 23             0.21        2.82209
+        Al 3  -- Al 4              0.21        2.82306
+        Al 9  -- Al 20             0.23        2.82537
+        Al 12 -- Al 17             0.23        2.82564
+        Al 9  -- Al 14             0.22        2.82835
+        Al 7  -- Al 16             0.20        2.82873
+        Al 12 -- Al 26             0.20        2.82918
+        Al 2  -- Al 19             0.17        2.82960
+        Al 29 -- Al 31             0.23        2.83252
+        Al 21 -- Al 30             0.23        2.83277
+        Al 14 -- Al 32             0.20        2.83466
+        Al 1  -- Al 20             0.19        2.83490
+        Al 19 -- Al 26             0.22        2.83492
+        Al 6  -- Al 20             0.22        2.83576
+        Al 5  -- Al 24             0.21        2.83637
+        Al 5  -- Al 23             0.19        2.83754
+        Al 15 -- Al 25             0.20        2.83958
+        Al 6  -- Al 31             0.22        2.83994
+        Al 22 -- Al 25             0.23        2.84058
+        Al 9  -- Al 28             0.22        2.84184
+        Al 28 -- Al 31             0.18        2.84213
+        Al 4  -- Al 22             0.19        2.84253
+        Al 15 -- Al 22             0.20        2.84262
+        Al 18 -- Al 19             0.19        2.84263
+        Al 4  -- Al 15             0.19        2.84270
+        Al 2  -- Al 4              0.21        2.84346
+        Al 10 -- Al 27             0.20        2.84351
+        Al 30 -- Al 31             0.17        2.84377
+        Al 2  -- Al 24             0.18        2.84577
+        Al 5  -- Al 10             0.16        2.84641
+        Al 18 -- Al 20             0.20        2.84644
+        Al 27 -- Al 29             0.22        2.84812
+        Al 25 -- Al 30             0.17        2.85017
+        Al 3  -- Al 8              0.20        2.85124
+        Al 1  -- Al 4              0.19        2.85182
+        Al 1  -- Al 2              0.14        2.85466
+        Al 10 -- Al 13             0.17        2.85904
+        Al 17 -- Al 28             0.19        2.85933
+        Al 4  -- Al 7              0.18        2.86147
+        Al 24 -- Al 27             0.17        2.86147
+        Al 16 -- Al 30             0.20        2.86189
+        Al 9  -- Al 31             0.18        2.86216
+        Al 3  -- Al 26             0.20        2.86229
+        Al 19 -- Al 24             0.17        2.86240
+        Al 26 -- Al 29             0.22        2.86283
+        Al 14 -- Al 15             0.21        2.86337
+        Al 1  -- Al 12             0.19        2.86352
+        Al 31 -- Al 32             0.19        2.86393
+        Al 3  -- Al 16             0.20        2.86450
+        Al 19 -- Al 32             0.16        2.86479
+        Al 30 -- Al 32             0.18        2.86563
+        Al 11 -- Al 29             0.21        2.86566
+        Al 2  -- Al 8              0.16        2.86780
+        Al 17 -- Al 26             0.18        2.86928
+        Al 7  -- Al 12             0.18        2.87006
+        Al 23 -- Al 30             0.17        2.87022
+        Al 11 -- Al 26             0.18        2.87129
+        Al 6  -- Al 13             0.19        2.87143
+        Al 8  -- Al 11             0.18        2.87301
+        Al 21 -- Al 23             0.17        2.87310
+        Al 18 -- Al 21             0.17        2.87312
+        Al 4  -- Al 18             0.21        2.87329
+        Al 27 -- Al 32             0.17        2.87357
+        Al 4  -- Al 17             0.16        2.87390
+        Al 1  -- Al 23             0.19        2.87492
+        Al 4  -- Al 6              0.17        2.87514
+        Al 17 -- Al 18             0.19        2.87556
+        Al 17 -- Al 19             0.18        2.87585
+        Al 24 -- Al 31             0.21        2.87655
+        Al 5  -- Al 14             0.13        2.87706
+        Al 26 -- Al 32             0.19        2.87708
+        Al 5  -- Al 6              0.20        2.87721
+        Al 22 -- Al 31             0.21        2.87745
+        Al 15 -- Al 29             0.17        2.87837
+        Al 17 -- Al 30             0.17        2.87875
+        Al 23 -- Al 24             0.18        2.87883
+        Al 25 -- Al 27             0.20        2.87896
+        Al 3  -- Al 18             0.19        2.87984
+        Al 21 -- Al 22             0.20        2.88103
+        Al 5  -- Al 7              0.17        2.88154
+        Al 8  -- Al 21             0.20        2.88190
+        Al 6  -- Al 8              0.18        2.88213
+        Al 13 -- Al 32             0.16        2.88241
+        Al 11 -- Al 16             0.19        2.88262
+        Al 6  -- Al 7              0.20        2.88309
+        Al 19 -- Al 28             0.16        2.88310
+        Al 13 -- Al 31             0.19        2.88345
+        Al 10 -- Al 28             0.16        2.88346
+        Al 20 -- Al 22             0.20        2.88543
+        Al 1  -- Al 14             0.18        2.88583
+        Al 20 -- Al 23             0.19        2.88585
+        Al 21 -- Al 32             0.16        2.88586
+        Al 13 -- Al 16             0.18        2.88642
+        Al 14 -- Al 31             0.17        2.88664
+        Al 9  -- Al 12             0.17        2.88759
+        Al 4  -- Al 9              0.17        2.88842
+        Al 7  -- Al 22             0.17        2.88898
+        Al 12 -- Al 15             0.17        2.88952
+        Al 4  -- Al 11             0.21        2.89044
+        Al 6  -- Al 23             0.18        2.89056
+        Al 20 -- Al 27             0.17        2.89063
+        Al 11 -- Al 25             0.17        2.89138
+        Al 17 -- Al 23             0.17        2.89162
+        Al 3  -- Al 21             0.17        2.89443
+        Al 14 -- Al 28             0.16        2.89445
+        Al 25 -- Al 31             0.16        2.89615
+        Al 16 -- Al 26             0.17        2.89735
+        Al 8  -- Al 22             0.17        2.89758
+        Al 7  -- Al 30             0.17        2.89849
+        Al 8  -- Al 18             0.18        2.89949
+        Al 13 -- Al 24             0.15        2.89980
+        Al 5  -- Al 19             0.11        2.90052
+        Al 9  -- Al 11             0.18        2.90194
+        Al 3  -- Al 12             0.16        2.90551
+        Al 27 -- Al 28             0.16        2.90603
+        Al 10 -- Al 11             0.17        2.90644
+        Al 15 -- Al 30             0.16        2.90860
+        Al 18 -- Al 25             0.19        2.90878
+        Al 2  -- Al 27             0.15        2.90899
+        Al 10 -- Al 16             0.15        2.90921
+        Al 26 -- Al 27             0.17        2.90961
+        Al 6  -- Al 24             0.16        2.91257
+        Al 16 -- Al 29             0.15        2.91523
+        Al 5  -- Al 8              0.15        2.91524
+        Al 9  -- Al 27             0.17        2.91613
+        Al 18 -- Al 29             0.15        2.91662
+        Al 26 -- Al 28             0.14        2.91988
+        Al 24 -- Al 29             0.15        2.91990
+        Al 16 -- Al 21             0.14        2.91992
+        Al 9  -- Al 10             0.17        2.92101
+        Al 3  -- Al 17             0.14        2.92242
+        Al 3  -- Al 10             0.13        2.92326
+        Al 12 -- Al 14             0.14        2.92393
+        Al 25 -- Al 26             0.13        2.92465
+        Al 7  -- Al 21             0.16        2.92487
+        Al 1  -- Al 28             0.12        2.92823
+        Al 17 -- Al 20             0.13        2.93117
+        Al 22 -- Al 24             0.15        2.93188
+        Al 15 -- Al 16             0.15        2.93190
+        Al 2  -- Al 11             0.14        2.93244
+        Al 19 -- Al 21             0.11        2.93434
+        Al 22 -- Al 23             0.15        2.93481
+        Al 4  -- Al 25             0.14        2.93489
+        Al 10 -- Al 12             0.14        2.93533
+        Al 12 -- Al 30             0.13        2.93723
+        Al 13 -- Al 14             0.13        2.94646
+        Al 22 -- Al 29             0.12        2.94735
+        Al 29 -- Al 32             0.11        2.95125
+        Al 20 -- Al 31             0.13        2.95205
+        Al 13 -- Al 15             0.12        2.95445
+        Al 1  -- Al 6              0.12        2.95940
+        Al 2  -- Al 9              0.13        2.96357
+        Al 7  -- Al 8              0.15        2.96485
+        Al 11 -- Al 18             0.13        2.97552
+        Al 20 -- Al 25             0.12        2.97915
+============================================================
+ 
+
+Writing analysis data to Al_100K-321.castep_bin
+
+Writing model to Al_100K-321.check
+ 
+ A BibTeX formatted list of references used in this run has been written to 
+ Al_100K-321.bib
+ 
+Initialisation time =    502.65 s
+Calculation time    = 122730.85 s
+Finalisation time   =    196.33 s
+Total time          = 123429.83 s
+Peak Memory Use     = 87420060 kB

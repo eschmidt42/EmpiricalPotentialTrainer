@@ -1,0 +1,26 @@
+Upon first use, run ./build.sh to compile python interfaces to fortran code
+
+If compilation is unsuccessful, copy assorted_headers.py to assorted.py and
+continue to use module with pure Python only.
+
+REQUIREMENTS
+------------
+1. f2py https://docs.scipy.org/doc/numpy-dev/f2py/  
+2. f90wrap https://github.com/jameskermode/f90wrap  
+
+INSTALL
+-------
+1. conda install numpy
+2. conda install f90wrap
+
+NOTES
+-----
+Only gnu compilers have been tested. Tested compiler and wrapper versions are:
+
+gfortran 4.8.3
+f2py     2
+f90wrap  0.1.0
+
+For multithreading, remember to "export OMP_NUM_THREADS=<x>" in a unix shell 
+before executing Python. $OMP_NUM_NUM_THREADS can be checked from Python, by 
+calling fortran.interface.get_num_threads() from the package root

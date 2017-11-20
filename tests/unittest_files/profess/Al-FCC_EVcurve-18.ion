@@ -1,0 +1,16 @@
+%BLOCK LATTICE_CART
+4.016461             0.000000             0.000000            
+0.000000             4.016461             0.000000            
+0.000000             0.000000             4.016461            
+%ENDBLOCK LATTICE_CART
+
+%BLOCK POSITIONS_FRAC
+Al    0.000000             0.000000             0.000000            
+Al    0.500000             0.500000             0.000000            
+Al    0.500000             0.000000             0.500000            
+Al    0.000000             0.500000             0.500000            
+%ENDBLOCK POSITIONS_FRAC
+
+%BLOCK SPECIES_POT
+Al al_HC.lda.recpot
+%ENDBLOCK SPECIES_POT

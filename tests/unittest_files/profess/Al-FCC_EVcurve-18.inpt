@@ -1,0 +1,6 @@
+ecut         800
+kinetic      wt
+exch         lda
+calculate stresses
+calculate forces
+print density 

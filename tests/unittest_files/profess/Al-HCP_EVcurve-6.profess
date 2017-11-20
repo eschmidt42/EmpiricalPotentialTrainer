@@ -1,0 +1,163 @@
+ ******************************************************************************
+                             WELCOME TO PROFESS                   
+            (PRinceton Orbital-Free Electronic Structure Software) 
+ ******************************************************************************
+
+ ------------------------------------------------------------------------------
+                           READ GEOMETRY
+ Cell length (Bohr)    5.276E+00   5.276E+00   8.784E+00
+ Angle     (Degree)    9.000E+01   9.000E+01   1.200E+02
+ Volume    (Bohr^3)    2.117E+02
+
+ ------------------------------------------------------------------------------
+                           READ PSEUDOPOTENTIAL
+ Total electron number in ReadPseudo is    6.0000000000000000     
+ (System) Machine Precision              :    2.2204460492503131E-016
+
+ ------------------------------------------------------------------------------
+                           SETUP FFT
+ Global FFT Dimension :    14   18   24
+ Rank/Size in Global Communicator     :            0 /           6
+ Rank/Size in Global FFT Communicator :            0 /           6
+ Parallel FFT, totX    =    14
+ Parallel FFT, totY    =    18
+ Parallel FFT, locZ    =     4
+ Parallel FFT, locZoff =     0
+ Dimension of rho for this processor : 
+ xmin, xmax :            0          13
+ ymin, ymax :            0          17
+ zmin, zmax :            0           3
+ Total electron number =    6.0000000000000000     
+ Uniform rhoR =    2.8336120631188365E-002
+ (GB INFO) FFT size      :       14      18       4
+ (GB INFO) FFT offset    :        0
+ (GB INFO) FFT G size    :        8      18       4
+ (GB INFO) FFT G offset  :        0
+
+ ------------------------------------------------------------------------------
+                           SETUP KEDF
+ kinetic energy density functional number is            4
+ ( 1=TF, 2=VW, 3=TF+VW, 4=WT,  5=WGC,  
+   7=LQ, 8=HQ, 10=CAT,  11=HC, 12=WGCD,
+   15=GGA, 16=WGCD+GGA, 17=EVT, 18=EVC )
+ qTable dimension:     8   18    4
+ Coefficient for TF KEDF is     1.0000
+ Coefficient for VW KEDF is     1.0000
+ Coefficient for alpha in WT KEDF is     0.8333
+ Coefficient for beta  in WT KEDF is     0.8333
+ rho0 (Electron/Bohr^3) in WGC KEDF is     0.0283
+ hold0 =  F
+  dV of each real space grid is now    3.5010561430613402E-002
+ Cell length (Bohr)    5.276E+00   5.276E+00   8.784E+00
+ Angle     (Degree)    9.000E+01   9.000E+01   1.200E+02
+ Volume    (Bohr^3)    2.117E+02
+
+ ------------------------------------------------------------------------------
+                           SETUP EWALD 
+ (Ewald) eta                             :   0.7449    
+ (Ewald) Real Space Cutoff               :    6.593     (Bohr)
+ (Ewald) Reciprocal Cutoff               :    7.741     (1/Bohr)
+
+ ------------------------------------------------------------------------------
+                           SETUP PLANE WAVE 
+ Fill the 3D Wang-Teter kernel in G space
+
+ ------------------------------------------------------------------------------
+                           REFRESH ION POSITIONS
+  
+ Calculating Ion-Ion Energy ...                   complete.     0.000 s
+  
+ Calculating Ion-Electron Potential (spline) ... 
+ complete.     0.000 s
+
+ ------------------------------------------------------------------------------
+                           DENSITY OPTIMIZATION
+ Electron number for spin            1  is    5.9999999999999485     
+ Cell Volume      :            31.377205 Angstrom^3
+ Ion number       :                    2
+ Electron number  :             6.000000
+ Ion density      :             0.063741 Ion/Angstrom^3
+ Electron density :             0.191222 Electron/Angstrom^3
+  
+ Calculating Ion-Ion Forces ...                complete.     0.000 s
+  
+ Calculating Ion-Electron Forces (spline) ...  complete.     0.000 s
+  
+ Calculating Ion-Electron Stress (spline) ...  complete.     0.000 s
+  
+ Calculating Ion-Ion Stress ...                complete.     0.000 s
+ Print density file to Al-HCP_EVcurve-6.den                              
+##############################################################################
+#                               FINAL ENERGIES                       time    #
+##############################################################################
+# Thomas-Fermi Kin. Energy =   4.427421805954E+01 eV                 0.000 s #
+# Von-Weizsacker Kin. Ener =   3.553056188010E+00 eV                 0.000 s #
+# Wang-Teter Kinetic Energ =  -1.241452761112E+00 eV                 0.000 s #
+#                                                                            #
+#     LDA Exch-Corr Energy =  -4.433568681795E+01 eV                 0.000 s #
+#         Coulombic Energy =   2.090070846658E-01 eV                 0.000 s #
+#      Ion-Electron Energy =   3.122249547174E+01 eV                 0.000 s #
+#           Ion-Ion Energy =  -1.495095482499E+02 eV                 0.000 s #
+#                                                                            #
+#     TOTAL KINETIC ENERGY =   4.658582148644E+01 eV                         #
+#   TOTAL POTENTIAL ENERGY =  -1.624137325115E+02 eV                         #
+#             TOTAL ENERGY =  -1.158279110250E+02 eV                         #
+##############################################################################
+ 
+:----------------------------------------------------------------------------:
+ TOTAL-FORCE (eV/A)
+:----------------------------------------------------------------------------:
+:               x                  y                  z                      :
+: Al     1  -1.3861881230E-06   7.3805621070E-07  -1.1397737846E-11          :
+: Al     2  -2.2544116756E-06  -2.8390107800E-06   2.1936816216E-12          :
+:............................................................................:
+ 
+:----------------------------------------------------------------------------:
+ TOTAL-FORCE (Hartree/Bohr)
+:----------------------------------------------------------------------------:
+:               x                  y                  z                      :
+: Al     1  -2.6957069768E-08   1.4352909561E-08  -2.2165073355E-13          :
+: Al     2  -4.3841331356E-08  -5.5209975036E-08   4.2660319721E-14          :
+:............................................................................:
+  
+ ------------------------------------------------------------------------------
+                         LATTICE VECTORS (Angstrom)
+ LAT 1           2.791833        0.000000        0.000000
+ LAT 2          -1.395916        2.417798        0.000000
+ LAT 3           0.000000        0.000000        4.648414
+ ------------------------------------------------------------------------------
+                                STRESS (GPa)
+ ST_GPa 1       -1.370860        0.000009        0.000001
+ ST_GPa 2        0.000009       -1.370840       -0.000000
+ ST_GPa 3        0.000001       -0.000000       -1.200993
+  
+ --------------------------------------------------
+ STRESS (a.u.)
+ --------------------------------------------------
+ ST_AU  1  -4.6594605373E-05   2.9550169213E-10   3.7404398758E-11
+ ST_AU  2   2.9550169213E-10  -4.6593922139E-05  -6.6776172242E-12
+ ST_AU  3   3.7404398758E-11  -6.6776172242E-12  -4.0820930695E-05
+  
+ ----------------------------- TIME INFORMATION ------------------------------
+    PROFESS      :      0.25s WALL    100.00% (       1 calls)     0.25s/call
+    InitPROFESS  :      0.06s WALL     22.61% (       1 calls)     0.06s/call
+    KEDFRefresh  :      0.00s WALL      0.05% (       1 calls)     0.00s/call
+    IonRefresh   :      0.00s WALL      0.34% (       1 calls)     0.00s/call
+    EwaldEnergy  :      0.00s WALL      0.14% (       1 calls)     0.00s/call
+    Pot_Ion      :      0.00s WALL      0.09% (      80 calls)     0.00s/call
+    Pot_Har      :      0.01s WALL      4.37% (      80 calls)     0.00s/call
+    Pot_Exc      :      0.02s WALL      7.52% (      80 calls)     0.00s/call
+    Pot_KEDF     :      0.10s WALL     40.90% (      80 calls)     0.00s/call
+    VWPotSqrPlus :      0.01s WALL      4.54% (      80 calls)     0.00s/call
+    NextGradient :      0.00s WALL      0.20% (       7 calls)     0.00s/call
+    CalForce     :      0.00s WALL      0.30% (       1 calls)     0.00s/call
+    EwaldForces  :      0.00s WALL      0.17% (       1 calls)     0.00s/call
+    CalStress    :      0.00s WALL      1.15% (       1 calls)     0.00s/call
+    EwaldStress  :      0.00s WALL      0.09% (       1 calls)     0.00s/call
+ -----------------------------------------------------------------------------
+ ------------------------------- TOTAL ---------------------------------------
+    PROFESS      :      0.25s WALL    100.00% (       1 calls)     0.25s/call
+ -----------------------------------------------------------------------------
+
+Run completed on: 04/21/2017 at 16:41:42 
+  
