@@ -1,6 +1,6 @@
-from pottytrainer import fitelectrondensity
-from pottytrainer import data_structures
-from pottytrainer import fitenergy
-from pottytrainer import fortran
-from pottytrainer import parsers
-#from pottytrainer import tests
+import fitelectrondensity
+import data_structures
+import fitenergy
+import fortran
+import parsers
+import tests

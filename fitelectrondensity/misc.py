@@ -1020,7 +1020,7 @@ def get_observations(s, r_cut=None, num_neigh=6, selection=("random",10.),\
                      iso=True, aniso=False, ultra_num=2, verbose=False,\
                      seed=False, ani_type="BOP",\
                      ani_specification={"l_range":np.arange(0,7)}, usefortran=False):
-    print("BLAAAAM!")
+    
     """Produces target densities and related input X, such as distances and angles.
     
     Parameters

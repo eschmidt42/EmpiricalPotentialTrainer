@@ -4,7 +4,7 @@ import ase
 from ase.calculators.eam import EAM
 from fitenergy.potential_serial import get_precomputed_energy_force_values
 import warnings, itertools, pickle, os, sys, copy
-sys.path.append("..")
+#sys.path.append("..")
 import parsers
 import fitelectrondensity as fed
 import numpy as np
@@ -13,7 +13,7 @@ import scipy as sp
 from scipy.interpolate import InterpolatedUnivariateSpline as spline
 import matplotlib.pylab as plt
 
-from . import nonlin
+from fitenergy import nonlin
 
 # new stuff - parallel
 from fitenergy import misc, potential, regression
